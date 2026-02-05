@@ -131,7 +131,7 @@ cat > ~/launch-chrome-debug.sh << 'EOF'
 #!/bin/bash
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9222 \
-  --user-data-dir=/tmp/chrome-debug &
+  --user-data-dir=$HOME/Downloads/chrome-automation/chrome-debug-data &
 EOF
 
 # Make executable

@@ -4,7 +4,7 @@
 
 set -e
 
-INSTALL_DIR="${1:-/Users/jyxc-dz-0100272/Documents/agent-browser}"
+INSTALL_DIR="${1:-$HOME/Documents/agent-browser}"
 
 echo "🚀 Setting up agent-browser at: $INSTALL_DIR"
 
