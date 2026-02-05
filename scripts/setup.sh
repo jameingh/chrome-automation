@@ -31,7 +31,7 @@ fi
 
 # Step 2: Install Chromium
 echo "🌐 Installing Chromium browser..."
-npx playwright install chromium
+# npx playwright install chromium
 
 # Step 3: Build TypeScript
 echo "🔨 Building TypeScript code..."

@@ -76,11 +76,6 @@ echo ""
 echo "Installing dependencies..."
 pnpm install
 
-# Install Chromium
-echo ""
-echo "Installing Chromium browser..."
-npx playwright install chromium
-
 # Build
 echo ""
 echo "Building TypeScript code..."
@@ -113,8 +108,8 @@ echo "    --remote-debugging-port=9222 \\"
 echo "    --user-data-dir=/tmp/chrome-debug &"
 echo ""
 echo "For more information, see:"
-echo "  - Setup guide: ~/.claude/skills/chrome-automation/references/setup-mac.md"
-echo "  - Commands: ~/.claude/skills/chrome-automation/references/commands.md"
+echo "  - Setup guide: $HOME/Downloads/chrome-automation/references/setup-mac.md"
+echo "  - Commands: $HOME/Downloads/chrome-automation/references/commands.md"
 echo ""
 ```
 
@@ -211,11 +206,6 @@ Write-Host ""
 Write-Host "Installing dependencies..." -ForegroundColor Yellow
 pnpm install
 
-# Install Chromium
-Write-Host ""
-Write-Host "Installing Chromium browser..." -ForegroundColor Yellow
-npx playwright install chromium
-
 # Build
 Write-Host ""
 Write-Host "Building TypeScript code..." -ForegroundColor Yellow
@@ -246,8 +236,8 @@ Write-Host '  Start-Process "C:\Program Files\Google\Chrome\Application\chrome.e
 Write-Host '    -ArgumentList "--remote-debugging-port=9222", "--user-data-dir=$env:TEMP\chrome-debug"'
 Write-Host ""
 Write-Host "For more information, see:" -ForegroundColor Cyan
-Write-Host "  - Setup guide: ~/.claude/skills/chrome-automation/references/setup-windows.md"
-Write-Host "  - Commands: ~/.claude/skills/chrome-automation/references/commands.md"
+Write-Host "  - Setup guide: $HOME/Downloads/chrome-automation/references/setup-windows.md"
+Write-Host "  - Commands: $HOME/Downloads/chrome-automation/references/commands.md"
 Write-Host ""
 ```
 
@@ -270,7 +260,6 @@ cd ~/Documents && \
 git clone https://github.com/vercel-labs/agent-browser.git && \
 cd agent-browser && \
 pnpm install && \
-npx playwright install chromium && \
 npm run build
 ```
 
@@ -281,7 +270,6 @@ Set-Location "$HOME\Documents"; `
 git clone https://github.com/vercel-labs/agent-browser.git; `
 Set-Location agent-browser; `
 pnpm install; `
-npx playwright install chromium; `
 npm run build
 ```
 
@@ -296,9 +284,6 @@ npm run build
 echo "Removing agent-browser..."
 rm -rf ~/Documents/agent-browser
 
-echo "Removing Playwright cache..."
-rm -rf ~/Library/Caches/ms-playwright
-
 echo "agent-browser uninstalled."
 echo "Note: pnpm and Node.js were not removed."
 ```
@@ -310,9 +295,6 @@ echo "Note: pnpm and Node.js were not removed."
 
 Write-Host "Removing agent-browser..."
 Remove-Item -Recurse -Force "$HOME\Documents\agent-browser" -ErrorAction SilentlyContinue
-
-Write-Host "Removing Playwright cache..."
-Remove-Item -Recurse -Force "$env:LOCALAPPDATA\ms-playwright" -ErrorAction SilentlyContinue
 
 Write-Host "agent-browser uninstalled."
 Write-Host "Note: pnpm and Node.js were not removed."

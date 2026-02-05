@@ -9,7 +9,6 @@ Automatic installation script for macOS that:
 - Checks if agent-browser is already installed and working
 - Clones repository if needed
 - Installs pnpm if missing
-- Installs Playwright Chromium
 - Checks and installs Rust toolchain (cargo, rustup)
 - Sets up stable Rust toolchain
 - Builds native binary
@@ -17,7 +16,7 @@ Automatic installation script for macOS that:
 
 **Usage:**
 ```bash
-bash ~/.claude/skills/chrome-automation/scripts/auto-install-mac.sh
+bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
 ```
 
 ### `auto-install-windows.ps1`
@@ -25,7 +24,6 @@ Automatic installation script for Windows (PowerShell) that:
 - Checks if agent-browser is already installed and working
 - Clones repository if needed
 - Installs pnpm if missing
-- Installs Playwright Chromium
 - Downloads and installs Rust toolchain if needed
 - Sets up stable Rust toolchain
 - Builds native binary
@@ -33,7 +31,7 @@ Automatic installation script for Windows (PowerShell) that:
 
 **Usage:**
 ```powershell
-powershell -ExecutionPolicy Bypass -File "$HOME\.claude\skills\chrome-automation\scripts\auto-install-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
 ```
 
 ## Requirements
@@ -54,12 +52,11 @@ powershell -ExecutionPolicy Bypass -File "$HOME\.claude\skills\chrome-automation
 Both scripts automatically install these dependencies if missing:
 
 1. **pnpm** - Fast, disk space efficient package manager
-2. **Playwright Chromium** - Browser automation library
-3. **Rust toolchain** - Required for building native binary
+2. **Rust toolchain** - Required for building native binary
    - rustup (Rust installer)
    - cargo (Rust package manager)
    - stable toolchain
-4. **agent-browser** - Native binary compiled from source
+3. **agent-browser** - Native binary compiled from source
 
 ## Installation Location
 

@@ -53,10 +53,6 @@ echo "✓ pnpm found: $(pnpm --version)"
 echo "📦 Installing dependencies..."
 pnpm install
 
-# Install Playwright Chromium
-echo "📦 Installing Playwright Chromium..."
-npx playwright install chromium
-
 # Check Rust/Cargo
 if ! command -v cargo &> /dev/null; then
     # Check if cargo exists in default location

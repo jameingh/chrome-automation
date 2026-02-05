@@ -55,10 +55,6 @@ Write-Host "✓ pnpm found: $(pnpm --version)" -ForegroundColor Green
 Write-Host "📦 Installing dependencies..." -ForegroundColor Cyan
 pnpm install
 
-# Install Playwright Chromium
-Write-Host "📦 Installing Playwright Chromium..." -ForegroundColor Cyan
-npx playwright install chromium
-
 # Check Rust/Cargo
 $cargoPath = "$HOME\.cargo\bin\cargo.exe"
 if (-not (Get-Command cargo -ErrorAction SilentlyContinue)) {

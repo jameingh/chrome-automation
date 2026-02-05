@@ -75,7 +75,6 @@ Set-Location agent-browser
 pnpm install
 
 # This will install all required packages including:
-# - Playwright
 # - TypeScript
 # - Other dependencies
 ```
@@ -86,7 +85,7 @@ Packages: +XXX
 Progress: resolved XXX, reused XXX, downloaded XX
 ```
 
-### Step 3: Install Chromium Browser
+### Step 3: Install Chromium Browser(skip when use Chrome DevTools Protocol (CDP) connection)
 
 ```powershell
 # Install Playwright's Chromium browser

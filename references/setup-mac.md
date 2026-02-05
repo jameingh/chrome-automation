@@ -51,7 +51,6 @@ cd agent-browser
 pnpm install
 
 # This will install all required packages including:
-# - Playwright
 # - TypeScript
 # - Other dependencies
 ```
@@ -62,7 +61,7 @@ Packages: +XXX
 Progress: resolved XXX, reused XXX, downloaded XX
 ```
 
-### Step 3: Install Chromium Browser
+### Step 3: Install Chromium Browser(skip when use Chrome DevTools Protocol (CDP) connection)
 
 ```bash
 # Install Playwright's Chromium browser
@@ -131,7 +130,7 @@ cat > ~/launch-chrome-debug.sh << 'EOF'
 #!/bin/bash
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9222 \
-  --user-data-dir=$HOME/Downloads/chrome-automation/chrome-debug-data &
+  --user-data-dir=$HOME/Library/Application Support/Google/Chrome-Automation &
 EOF
 
 # Make executable

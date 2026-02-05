@@ -42,7 +42,6 @@ The installation script will:
 - Check for existing agent-browser installation
 - Clone the agent-browser repository if needed
 - Install Node.js dependencies (pnpm)
-- Install Playwright Chromium
 - Install and configure Rust toolchain (if needed)
 - Build the native binary
 - Verify installation success
@@ -223,7 +222,7 @@ sleep 2
 ## Profile Management
 
 ### Profile Locations
-- **macOS**: `~/Library/Application Support/Google/Chrome-Automation`
+- **macOS**: `$HOME/Library/Application Support/Google/Chrome-Automation`
 - **Windows**: `%USERPROFILE%\AppData\Local\Google\Chrome-Automation`
 
 ### Reset Automation Profile
@@ -231,7 +230,7 @@ To reset the profile and re-import from your main Chrome:
 
 **macOS:**
 ```bash
-rm -rf ~/Library/Application\ Support/Google/Chrome-Automation
+rm -rf $HOME/Library/Application Support/Google/Chrome-Automation
 bash scripts/start-chrome-mac.sh
 ```
 
@@ -265,7 +264,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - [agent-browser](https://github.com/vercel-labs/agent-browser) - The underlying browser automation tool
-- [Playwright](https://playwright.dev/) - Browser automation library
 - [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) - Protocol for controlling Chrome
 
 ---
