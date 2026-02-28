@@ -82,6 +82,7 @@ npm run build:native
 
 ln -sf ~/Documents/agent-browser/bin/agent-browser-darwin-x64 ~/Documents/agent-browser/bin/agent-browser
 chmod +x ~/Documents/agent-browser/bin/agent-browser
+ln -sf ~/Documents/agent-browser/bin/agent-browser /usr/local/bin/agent-browser
 
 # Verify installation
 if [ -f "$AB_BIN" ]; then
