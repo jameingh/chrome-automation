@@ -7,7 +7,7 @@ set -e
 echo "🔍 Checking agent-browser installation..."
 
 # Define paths
-AB_HOME="$HOME/Documents/agent-browser"
+AB_HOME="/Users/akm/Documents/agent-browser"
 AB_BIN="$AB_HOME/bin/agent-browser"
 NEED_BUILD=0
 
@@ -67,7 +67,7 @@ fi
 # Check if repository exists
 if [ ! -d "$AB_HOME" ]; then
     echo "📦 Cloning agent-browser repository..."
-    cd "$HOME/Documents"
+    cd "/Users/akm/Documents"
     git clone https://github.com/vercel-labs/agent-browser.git
     cd agent-browser
 else
@@ -96,18 +96,18 @@ pnpm install
 # Check Rust/Cargo
 if ! command -v cargo &> /dev/null; then
     # Check if cargo exists in default location
-    if [ -f "$HOME/.cargo/bin/cargo" ]; then
+    if [ -f "/Users/akm/.cargo/bin/cargo" ]; then
         echo "✓ Cargo found in ~/.cargo/bin, adding to PATH"
-        export PATH="$HOME/.cargo/bin:$PATH"
+        export PATH="/Users/akm/.cargo/bin:$PATH"
     else
         echo "❌ Rust/Cargo not found. Installing rustup..."
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-        export PATH="$HOME/.cargo/bin:$PATH"
+        export PATH="/Users/akm/.cargo/bin:$PATH"
     fi
 fi
 
 # Ensure cargo is in PATH
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/Users/akm/.cargo/bin:$PATH"
 
 # Check if default toolchain is set
 if ! rustup default 2>/dev/null | grep -q "stable"; then

@@ -26,10 +26,10 @@ npm run build
 **Solution:**
 ```powershell
 # Check if binary exists
-Test-Path "$HOME\Documents\agent-browser\bin\agent-browser.cmd"
+Test-Path "/Users/akm\Documents\agent-browser\bin\agent-browser.cmd"
 
 # If not found, run setup (see references/setup-windows.md)
-Set-Location "$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
 pnpm install
 npm run build
 ```
@@ -75,8 +75,8 @@ AGENT_BROWSER_HOME=~/Documents/agent-browser \
 **Windows Solution:**
 ```powershell
 # Set environment variable and run
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 <command>
 ```
 
@@ -106,7 +106,7 @@ Start-Process chrome "https://google.com"
 Start-Sleep -Seconds 2
 
 # Then retry
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 snapshot -i
 ```
 
@@ -434,26 +434,26 @@ Get-Process chrome | Where-Object {$_.CommandLine -like "*remote-debugging-port*
 
 3. Test basic connection
 ```powershell
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 get url
 ```
 
 4. Take screenshot to see current state
 ```powershell
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 screenshot "$env:TEMP\debug.png"
 ```
 
 5. Check console for errors
 ```powershell
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 console
 ```
 
 6. Get page errors
 ```powershell
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 errors
 ```
 

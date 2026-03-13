@@ -59,7 +59,7 @@ Open PowerShell:
 
 ```powershell
 # Navigate to Documents folder
-Set-Location "$HOME\Documents"
+Set-Location "/Users/akm\Documents"
 
 # Clone agent-browser from GitHub
 git clone https://github.com/vercel-labs/agent-browser.git
@@ -117,12 +117,12 @@ Build completed successfully
 
 ```powershell
 # Check if binary exists
-Test-Path "$HOME\Documents\agent-browser\bin\agent-browser.cmd"
+Test-Path "/Users/akm\Documents\agent-browser\bin\agent-browser.cmd"
 # Should return: True
 
 # Test basic command
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --version
 ```
 
@@ -139,13 +139,13 @@ notepad $PROFILE
 # New-Item -Path $PROFILE -Type File -Force
 
 # Add these lines:
-$env:AGENT_BROWSER_HOME = "$HOME\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME = "/Users/akm\Documents\agent-browser"
 $env:PATH = "$env:AGENT_BROWSER_HOME\bin;$env:PATH"
 
 # Create alias
 function ab { 
-    $env:AGENT_BROWSER_HOME = "$HOME\Documents\agent-browser"
-    & "$HOME\Documents\agent-browser\bin\agent-browser.cmd" $args 
+    $env:AGENT_BROWSER_HOME = "/Users/akm\Documents\agent-browser"
+    & "/Users/akm\Documents\agent-browser\bin\agent-browser.cmd" $args 
 }
 
 # Save and reload
@@ -171,18 +171,18 @@ Create a launch script for Chrome with debugging enabled:
 @"
 @echo off
 start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir=%TEMP%\chrome-debug
-"@ | Out-File -FilePath "$HOME\launch-chrome-debug.bat" -Encoding ASCII
+"@ | Out-File -FilePath "/Users/akm\launch-chrome-debug.bat" -Encoding ASCII
 
 # Or for 32-bit Chrome:
 @"
 @echo off
 start "" "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir=%TEMP%\chrome-debug
-"@ | Out-File -FilePath "$HOME\launch-chrome-debug.bat" -Encoding ASCII
+"@ | Out-File -FilePath "/Users/akm\launch-chrome-debug.bat" -Encoding ASCII
 ```
 
 Usage:
 ```powershell
-& "$HOME\launch-chrome-debug.bat"
+& "/Users/akm\launch-chrome-debug.bat"
 ```
 
 ## Verification Tests
@@ -190,8 +190,8 @@ Usage:
 ### Test 1: Basic Command
 
 ```powershell
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --help
 ```
 
@@ -208,8 +208,8 @@ Start-Sleep -Seconds 2
 # Or manually navigate to https://google.com
 
 # Test connection
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 get url
 ```
 
@@ -221,12 +221,12 @@ https://google.com
 ### Test 3: Take Screenshot
 
 ```powershell
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
-.\bin\agent-browser.cmd --cdp 9222 screenshot "$HOME\Desktop\test.png"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
+.\bin\agent-browser.cmd --cdp 9222 screenshot "/Users/akm\Desktop\test.png"
 
 # Check if file exists
-Test-Path "$HOME\Desktop\test.png"
+Test-Path "/Users/akm\Desktop\test.png"
 ```
 
 ## Troubleshooting
@@ -259,8 +259,8 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
 **Solution:**
 Always set `AGENT_BROWSER_HOME` environment variable:
 ```powershell
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 <command>
 ```
 
@@ -282,7 +282,7 @@ Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentL
 **Solution:**
 ```powershell
 # Clean and rebuild
-Set-Location "$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
 Remove-Item -Recurse -Force node_modules, dist -ErrorAction SilentlyContinue
 pnpm install
 npm run build
@@ -305,7 +305,7 @@ npx playwright install chromium
 **Solution:**
 Use quotes around paths:
 ```powershell
-& "$HOME\Documents\agent-browser\bin\agent-browser.cmd" --cdp 9222 open "https://example.com"
+& "/Users/akm\Documents\agent-browser\bin\agent-browser.cmd" --cdp 9222 open "https://example.com"
 ```
 
 ### Issue: Long path errors during installation
@@ -324,7 +324,7 @@ New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name
 To update to the latest version:
 
 ```powershell
-Set-Location "$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
 
 # Pull latest changes
 git pull origin main
@@ -345,7 +345,7 @@ To completely remove agent-browser:
 
 ```powershell
 # Remove directory
-Remove-Item -Recurse -Force "$HOME\Documents\agent-browser"
+Remove-Item -Recurse -Force "/Users/akm\Documents\agent-browser"
 
 # Remove Playwright cache (optional)
 Remove-Item -Recurse -Force "$env:LOCALAPPDATA\ms-playwright"
@@ -366,7 +366,7 @@ Remove-Item -Recurse -Force "$env:LOCALAPPDATA\ms-playwright"
 
 ```powershell
 # Installation check
-Test-Path "$HOME\Documents\agent-browser\bin\agent-browser.cmd"
+Test-Path "/Users/akm\Documents\agent-browser\bin\agent-browser.cmd"
 
 # Start Chrome with debugging (64-bit)
 Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList "--remote-debugging-port=9222", "--user-data-dir=$env:TEMP\chrome-debug"
@@ -375,8 +375,8 @@ Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentL
 Start-Process "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -ArgumentList "--remote-debugging-port=9222", "--user-data-dir=$env:TEMP\chrome-debug"
 
 # Basic command format
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 <command>
 
 # Common commands

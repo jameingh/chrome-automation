@@ -22,10 +22,10 @@ This skill automatically checks and installs all required dependencies without u
 
 ```bash
 # Mac: Run auto-install script
-bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/auto-install-mac.sh
 
 # Windows: Run auto-install script (PowerShell)
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
 ```
 
 **The script will:**
@@ -55,10 +55,10 @@ powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scri
 
 ```bash
 # Mac
-bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/auto-install-mac.sh
 
 # Windows (PowerShell)
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
 ```
 
 The script automatically handles:
@@ -74,19 +74,19 @@ The script automatically handles:
 ```bash
 # Mac: Start Chrome with persistent profile (RECOMMENDED)
 # This preserves your login states, cookies, and settings
-bash $HOME/Downloads/chrome-automation/scripts/start-chrome-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/start-chrome-mac.sh
 
 # Windows: Start Chrome with persistent profile (PowerShell)
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\start-chrome-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\start-chrome-windows.ps1"
 
 # Use agent-browser with --cdp flag
-cd $HOME/Downloads/chrome-automation/agent-browser
-AGENT_BROWSER_HOME=$HOME/Downloads/chrome-automation/agent-browser \
+cd /Users/akm/Downloads/chrome-automation/agent-browser
+AGENT_BROWSER_HOME=/Users/akm/Downloads/chrome-automation/agent-browser \
 ./bin/agent-browser --cdp 9222 snapshot -i
 ```
 
 **What the start-chrome script does:**
-1. First run: Creates a dedicated automation profile at `$HOME/Library/Application Support/Google/Chrome-Automation`
+1. First run: Creates a dedicated automation profile at `/Users/akm/Library/Application Support/Google/Chrome-Automation`
 2. First run: Imports your existing Chrome configuration (login states, cookies, settings)
 3. Subsequent runs: Uses the existing automation profile - all your logins are preserved
 4. You only need to log in once - it will be remembered for future sessions
@@ -106,7 +106,7 @@ AGENT_BROWSER_HOME=$HOME/Downloads/chrome-automation/agent-browser \
 
 ```bash
 # Set path variables
-export AB_HOME=$HOME/Documents/agent-browser
+export AB_HOME=/Users/akm/Documents/agent-browser
 cd $AB_HOME
 
 # Navigate
@@ -138,7 +138,7 @@ AGENT_BROWSER_HOME=$AB_HOME ./bin/agent-browser --cdp 9222 screenshot /tmp/resul
 
 ```bash
 # Run auto-install script
-bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/auto-install-mac.sh
 ```
 
 **What it does:**
@@ -159,7 +159,7 @@ bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
 
 ```powershell
 # Run auto-install script (PowerShell)
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
 ```
 
 **What it does:**
@@ -193,7 +193,7 @@ pnpm install
 
 # 3. Install Rust (if not installed)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/Users/akm/.cargo/bin:$PATH"
 rustup default stable
 
 # 4. Build native binary
@@ -204,7 +204,7 @@ npm run build:native
 
 ```powershell
 # 1. Clone repository
-Set-Location "$HOME\Documents"
+Set-Location "/Users/akm\Documents"
 git clone https://github.com/vercel-labs/agent-browser.git
 Set-Location agent-browser
 
@@ -229,8 +229,8 @@ cd ~/Documents/agent-browser
 AGENT_BROWSER_HOME=~/Documents/agent-browser ./bin/agent-browser --version
 
 # Windows (PowerShell)
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME = "$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME = "/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --version
 ```
 
@@ -243,8 +243,8 @@ $env:AGENT_BROWSER_HOME = "$HOME\Documents\agent-browser"
 
 **"cargo: command not found":**
 - Rust toolchain not in PATH
-- Mac: `export PATH="$HOME/.cargo/bin:$PATH"`
-- Windows: `$env:PATH = "$HOME\.cargo\bin;$env:PATH"`
+- Mac: `export PATH="/Users/akm/.cargo/bin:$PATH"`
+- Windows: `$env:PATH = "/Users/akm\.cargo\bin;$env:PATH"`
 - Then run `rustup default stable` and `npm run build:native`
 
 **"rustup could not choose a version":**
@@ -268,7 +268,7 @@ This error is usually **harmless** - Rust binaries are still installed successfu
 **Fix steps:**
 ```bash
 # Mac: Set default toolchain manually
-$HOME/.cargo/bin/rustup default stable
+/Users/akm/.cargo/bin/rustup default stable
 
 # This will download and install:
 # - cargo, clippy, rust-docs, rust-std, rustc, rustfmt
@@ -292,7 +292,7 @@ cd ~/Documents/agent-browser/cli
 ~/.cargo/bin/cargo build --release
 
 # Or add to PATH for current session
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/Users/akm/.cargo/bin:$PATH"
 cargo build --release
 ```
 
@@ -331,11 +331,11 @@ cd ~/Documents/agent-browser
 node scripts/copy-native.js
 
 # Windows: Build with explicit cargo path
-Set-Location "$HOME\Documents\agent-browser\cli"
+Set-Location "/Users/akm\Documents\agent-browser\cli"
 & "$env:USERPROFILE\.cargo\bin\cargo.exe" build --release
 
 # Then copy binary manually
-Set-Location "$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
 node scripts/copy-native.js
 ```
 
@@ -357,14 +357,14 @@ For detailed troubleshooting, see:
 
 ```bash
 # Mac: Start Chrome with persistent profile
-bash $HOME/Downloads/chrome-automation/scripts/start-chrome-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/start-chrome-mac.sh
 
 # Windows (PowerShell):
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\start-chrome-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\start-chrome-windows.ps1"
 ```
 
 **First time setup (automatic):**
-- Creates dedicated profile at `$HOME/Library/Application Support/Google/Chrome-Automation` (Mac)
+- Creates dedicated profile at `/Users/akm/Library/Application Support/Google/Chrome-Automation` (Mac)
 - Or `%USERPROFILE%\AppData\Local\Google\Chrome-Automation` (Windows)
 - Imports your existing Chrome configuration (login states, cookies, bookmarks)
 - Excludes large cache files to save space
@@ -376,8 +376,8 @@ powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scri
 
 ```bash
 # Verify connection after starting Chrome
-cd $HOME/Documents/agent-browser
-AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
+cd /Users/akm/Documents/agent-browser
+AGENT_BROWSER_HOME=/Users/akm/Documents/agent-browser \
 ./bin/agent-browser --cdp 9222 get url
 ```
 
@@ -388,8 +388,8 @@ AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
 ps aux | grep "remote-debugging-port=9222"
 
 # If yes, connect directly
-cd $HOME/Documents/agent-browser
-AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
+cd /Users/akm/Documents/agent-browser
+AGENT_BROWSER_HOME=/Users/akm/Documents/agent-browser \
 ./bin/agent-browser --cdp 9222 get url
 ```
 
@@ -401,12 +401,12 @@ If you need to start Chrome manually without the script:
 # Mac: Start with persistent profile directory
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9222 \
-  --user-data-dir="$HOME/Library/Application Support/Google/Chrome-Automation" &
+  --user-data-dir="/Users/akm/Library/Application Support/Google/Chrome-Automation" &
 
 # Windows (PowerShell):
 Start-Process "chrome.exe" -ArgumentList @(
     "--remote-debugging-port=9222",
-    "--user-data-dir=`"$HOME\AppData\Local\Google\Chrome-Automation`""
+    "--user-data-dir=`"/Users/akm\AppData\Local\Google\Chrome-Automation`""
 )
 ```
 
@@ -417,8 +417,8 @@ Start-Process "chrome.exe" -ArgumentList @(
 ### Pattern 1: Web Search
 
 ```bash
-cd $HOME/Documents/agent-browser
-export AB_HOME=$HOME/Documents/agent-browser
+cd /Users/akm/Documents/agent-browser
+export AB_HOME=/Users/akm/Documents/agent-browser
 
 # Open search site
 AGENT_BROWSER_HOME=$AB_HOME ./bin/agent-browser --cdp 9222 open xiaohongshu.com
@@ -440,8 +440,8 @@ AGENT_BROWSER_HOME=$AB_HOME ./bin/agent-browser --cdp 9222 screenshot ~/Desktop/
 ### Pattern 2: Form Automation
 
 ```bash
-cd $HOME/Documents/agent-browser
-export AB_HOME=$HOME/Documents/agent-browser
+cd /Users/akm/Documents/agent-browser
+export AB_HOME=/Users/akm/Documents/agent-browser
 
 # Navigate
 AGENT_BROWSER_HOME=$AB_HOME ./bin/agent-browser --cdp 9222 open https://example.com/form
@@ -501,8 +501,8 @@ AGENT_BROWSER_HOME=$AB_HOME ./bin/agent-browser --cdp 9222 get url
 
 All commands use this format:
 ```bash
-cd $HOME/Documents/agent-browser
-AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
+cd /Users/akm/Documents/agent-browser
+AGENT_BROWSER_HOME=/Users/akm/Documents/agent-browser \
 ./bin/agent-browser --cdp 9222 <command>
 ```
 
@@ -532,7 +532,7 @@ AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
 - `eval "code"` - Execute JavaScript
 
 For complete command reference, see the agent-browser skill at:
-`$HOME/Documents/agent-browser/skills/agent-browser/SKILL.md`
+`/Users/akm/Documents/agent-browser/skills/agent-browser/SKILL.md`
 
 ## Troubleshooting
 
@@ -541,10 +541,10 @@ For complete command reference, see the agent-browser skill at:
 **"No binary found for darwin-arm64/win32-x64":**
 ```bash
 # Mac: Run auto-install script - it handles Rust installation
-bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/auto-install-mac.sh
 
 # Windows: Run auto-install script
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
 
 # Or manually:
 # Mac:
@@ -556,8 +556,8 @@ powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scri
 # Windows:
 # 1. Download Rust: https://win.rustup.rs/x86_64
 # 2. Set toolchain: & "$env:USERPROFILE\.cargo\bin\rustup.exe" default stable
-# 3. Build: cd "$HOME\Documents\agent-browser\cli"; & "$env:USERPROFILE\.cargo\bin\cargo.exe" build --release
-# 4. Copy: cd "$HOME\Documents\agent-browser"; node scripts/copy-native.js
+# 3. Build: cd "/Users/akm\Documents\agent-browser\cli"; & "$env:USERPROFILE\.cargo\bin\cargo.exe" build --release
+# 4. Copy: cd "/Users/akm\Documents\agent-browser"; node scripts/copy-native.js
 ```
 
 **"cargo: command not found":**
@@ -569,7 +569,7 @@ cd ~/Documents/agent-browser/cli
 
 # Windows: Use full path to cargo
 & "$env:USERPROFILE\.cargo\bin\rustup.exe" default stable
-Set-Location "$HOME\Documents\agent-browser\cli"
+Set-Location "/Users/akm\Documents\agent-browser\cli"
 & "$env:USERPROFILE\.cargo\bin\cargo.exe" build --release
 ```
 
@@ -598,8 +598,8 @@ Set-Location "$HOME\Documents\agent-browser\cli"
 **"Daemon not found" error:**
 ```bash
 # Must set AGENT_BROWSER_HOME and run from project directory
-cd $HOME/Documents/agent-browser
-AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
+cd /Users/akm/Documents/agent-browser
+AGENT_BROWSER_HOME=/Users/akm/Documents/agent-browser \
 ./bin/agent-browser --cdp 9222 <command>
 ```
 
@@ -610,7 +610,7 @@ osascript -e 'tell application "Google Chrome" to open location "https://google.
 sleep 2
 
 # Then retry
-AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
+AGENT_BROWSER_HOME=/Users/akm/Documents/agent-browser \
 ./bin/agent-browser --cdp 9222 snapshot -i
 ```
 
@@ -620,7 +620,7 @@ AGENT_BROWSER_HOME=$HOME/Documents/agent-browser \
 ps aux | grep "remote-debugging-port=9222"
 
 # If not, start it with persistent profile
-bash $HOME/Downloads/chrome-automation/scripts/start-chrome-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/start-chrome-mac.sh
 ```
 
 ## Best Practices
@@ -648,18 +648,18 @@ If you want to reset the automation profile and re-import from your main Chrome:
 ```bash
 # Mac: Remove automation profile and restart
 rm -rf ~/Library/Application\ Support/Google/Chrome-Automation
-bash $HOME/Downloads/chrome-automation/scripts/start-chrome-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/start-chrome-mac.sh
 
 # Windows (PowerShell): Remove automation profile and restart
-Remove-Item -Recurse -Force "$HOME\AppData\Local\Google\Chrome-Automation"
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\start-chrome-windows.ps1"
+Remove-Item -Recurse -Force "/Users/akm\AppData\Local\Google\Chrome-Automation"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\start-chrome-windows.ps1"
 ```
 
 ### Profile locations
 
 | Platform | Automation Profile Location |
 |----------|----------------------------|
-| Mac | `$HOME/Library/Application Support/Google/Chrome-Automation` |
+| Mac | `/Users/akm/Library/Application Support/Google/Chrome-Automation` |
 | Windows | `%USERPROFILE%\AppData\Local\Google\Chrome-Automation` |
 
 This profile is separate from your daily Chrome, so automation activities won't affect your main browser.

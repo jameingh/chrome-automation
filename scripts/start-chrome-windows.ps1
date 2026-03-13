@@ -4,8 +4,8 @@
 $ErrorActionPreference = "Stop"
 
 # Define paths
-$CHROME_AUTOMATION_DIR = "$HOME\AppData\Local\Google\Chrome-Automation"
-$CHROME_DEFAULT_DIR = "$HOME\AppData\Local\Google\Chrome\User Data"
+$CHROME_AUTOMATION_DIR = "/Users/akm\AppData\Local\Google\Chrome-Automation"
+$CHROME_DEFAULT_DIR = "/Users/akm\AppData\Local\Google\Chrome\User Data"
 $CHROME_APP = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 $DEBUG_PORT = 9222
 
@@ -96,7 +96,7 @@ Write-Host "🚀 Starting Chrome with automation profile..." -ForegroundColor Cy
 # Check if Chrome executable exists
 if (-not (Test-Path $CHROME_APP)) {
     # Try alternate location
-    $CHROME_APP = "$HOME\AppData\Local\Google\Chrome\Application\chrome.exe"
+    $CHROME_APP = "/Users/akm\AppData\Local\Google\Chrome\Application\chrome.exe"
     if (-not (Test-Path $CHROME_APP)) {
         Write-Host "❌ Chrome not found. Please ensure Google Chrome is installed." -ForegroundColor Red
         exit 1

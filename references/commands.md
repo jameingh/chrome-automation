@@ -15,8 +15,8 @@ AGENT_BROWSER_HOME=~/Documents/agent-browser \
 ### Windows (PowerShell)
 
 ```powershell
-Set-Location "$HOME\Documents\agent-browser"
-$env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
+$env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"
 .\bin\agent-browser.cmd --cdp 9222 <command> [options]
 ```
 

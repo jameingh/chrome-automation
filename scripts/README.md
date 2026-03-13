@@ -16,7 +16,7 @@ Automatic installation script for macOS that:
 
 **Usage:**
 ```bash
-bash $HOME/Downloads/chrome-automation/scripts/auto-install-mac.sh
+bash /Users/akm/Downloads/chrome-automation/scripts/auto-install-mac.sh
 ```
 
 ### `auto-install-windows.ps1`
@@ -31,7 +31,7 @@ Automatic installation script for Windows (PowerShell) that:
 
 **Usage:**
 ```powershell
-powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
+powershell -ExecutionPolicy Bypass -File "/Users/akm\Downloads\chrome-automation\scripts\auto-install-windows.ps1"
 ```
 
 ## Requirements
@@ -60,9 +60,9 @@ Both scripts automatically install these dependencies if missing:
 
 ## Installation Location
 
-- Repository: `~/Documents/agent-browser` (Mac) or `$HOME\Documents\agent-browser` (Windows)
-- Binary: `~/Documents/agent-browser/bin/agent-browser` (Mac) or `$HOME\Documents\agent-browser\bin\agent-browser.cmd` (Windows)
-- Rust: `~/.cargo/` (Mac) or `$HOME\.cargo\` (Windows)
+- Repository: `~/Documents/agent-browser` (Mac) or `/Users/akm\Documents\agent-browser` (Windows)
+- Binary: `~/Documents/agent-browser/bin/agent-browser` (Mac) or `/Users/akm\Documents\agent-browser\bin\agent-browser.cmd` (Windows)
+- Rust: `~/.cargo/` (Mac) or `/Users/akm\.cargo\` (Windows)
 
 ## Troubleshooting
 

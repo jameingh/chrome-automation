@@ -108,11 +108,11 @@ Add to your `~/.zshrc` or `~/.bash_profile`:
 
 ```bash
 # agent-browser shortcuts
-export AGENT_BROWSER_HOME="$HOME/Documents/agent-browser"
+export AGENT_BROWSER_HOME="/Users/akm/Documents/agent-browser"
 export PATH="$AGENT_BROWSER_HOME/bin:$PATH"
 
 # Alias for quick access
-alias ab='AGENT_BROWSER_HOME=$HOME/Documents/agent-browser $HOME/Documents/agent-browser/bin/agent-browser'
+alias ab='AGENT_BROWSER_HOME=/Users/akm/Documents/agent-browser /Users/akm/Documents/agent-browser/bin/agent-browser'
 ```
 
 Then reload:
@@ -130,7 +130,7 @@ cat > ~/launch-chrome-debug.sh << 'EOF'
 #!/bin/bash
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9222 \
-  --user-data-dir=$HOME/Library/Application Support/Google/Chrome-Automation &
+  --user-data-dir=/Users/akm/Library/Application Support/Google/Chrome-Automation &
 EOF
 
 # Make executable

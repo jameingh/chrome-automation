@@ -108,8 +108,8 @@ echo "    --remote-debugging-port=9222 \\"
 echo "    --user-data-dir=/tmp/chrome-debug &"
 echo ""
 echo "For more information, see:"
-echo "  - Setup guide: $HOME/Downloads/chrome-automation/references/setup-mac.md"
-echo "  - Commands: $HOME/Downloads/chrome-automation/references/commands.md"
+echo "  - Setup guide: /Users/akm/Downloads/chrome-automation/references/setup-mac.md"
+echo "  - Commands: /Users/akm/Downloads/chrome-automation/references/commands.md"
 echo ""
 ```
 
@@ -188,7 +188,7 @@ Write-Host "Installing agent-browser..." -ForegroundColor Yellow
 Write-Host ""
 
 # Navigate to Documents
-Set-Location "$HOME\Documents"
+Set-Location "/Users/akm\Documents"
 
 # Clone or update repository
 if (Test-Path "agent-browser") {
@@ -224,11 +224,11 @@ if (Test-Path "bin\agent-browser.cmd") {
 Write-Host ""
 Write-Host "=== Installation Complete ===" -ForegroundColor Green
 Write-Host ""
-Write-Host "agent-browser installed to: $HOME\Documents\agent-browser" -ForegroundColor Cyan
+Write-Host "agent-browser installed to: /Users/akm\Documents\agent-browser" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "To use agent-browser:" -ForegroundColor Cyan
-Write-Host '  Set-Location "$HOME\Documents\agent-browser"'
-Write-Host '  $env:AGENT_BROWSER_HOME="$HOME\Documents\agent-browser"'
+Write-Host '  Set-Location "/Users/akm\Documents\agent-browser"'
+Write-Host '  $env:AGENT_BROWSER_HOME="/Users/akm\Documents\agent-browser"'
 Write-Host '  .\bin\agent-browser.cmd --cdp 9222 <command>'
 Write-Host ""
 Write-Host "To start Chrome with debugging (64-bit):" -ForegroundColor Cyan
@@ -236,8 +236,8 @@ Write-Host '  Start-Process "C:\Program Files\Google\Chrome\Application\chrome.e
 Write-Host '    -ArgumentList "--remote-debugging-port=9222", "--user-data-dir=$env:TEMP\chrome-debug"'
 Write-Host ""
 Write-Host "For more information, see:" -ForegroundColor Cyan
-Write-Host "  - Setup guide: $HOME/Downloads/chrome-automation/references/setup-windows.md"
-Write-Host "  - Commands: $HOME/Downloads/chrome-automation/references/commands.md"
+Write-Host "  - Setup guide: /Users/akm/Downloads/chrome-automation/references/setup-windows.md"
+Write-Host "  - Commands: /Users/akm/Downloads/chrome-automation/references/commands.md"
 Write-Host ""
 ```
 
@@ -266,7 +266,7 @@ npm run build
 ### Windows One-liner (PowerShell)
 
 ```powershell
-Set-Location "$HOME\Documents"; `
+Set-Location "/Users/akm\Documents"; `
 git clone https://github.com/vercel-labs/agent-browser.git; `
 Set-Location agent-browser; `
 pnpm install; `
@@ -294,7 +294,7 @@ echo "Note: pnpm and Node.js were not removed."
 # Uninstall agent-browser
 
 Write-Host "Removing agent-browser..."
-Remove-Item -Recurse -Force "$HOME\Documents\agent-browser" -ErrorAction SilentlyContinue
+Remove-Item -Recurse -Force "/Users/akm\Documents\agent-browser" -ErrorAction SilentlyContinue
 
 Write-Host "agent-browser uninstalled."
 Write-Host "Note: pnpm and Node.js were not removed."
@@ -329,7 +329,7 @@ echo "Update complete!"
 ```powershell
 # Update agent-browser to latest version
 
-Set-Location "$HOME\Documents\agent-browser"
+Set-Location "/Users/akm\Documents\agent-browser"
 Write-Host "Pulling latest changes..."
 git pull origin main
 

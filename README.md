@@ -177,8 +177,8 @@ See `references/commands.md` for complete agent-browser command documentation.
 
 **"cargo: command not found"**
 - Rust toolchain not in PATH
-- macOS: `export PATH="$HOME/.cargo/bin:$PATH"`
-- Windows: `$env:PATH = "$HOME\.cargo\bin;$env:PATH"`
+- macOS: `export PATH="/Users/akm/.cargo/bin:$PATH"`
+- Windows: `$env:PATH = "/Users/akm\.cargo\bin;$env:PATH"`
 - Then rebuild: `npm run build:native`
 
 **"rustup could not choose a version"**
@@ -222,7 +222,7 @@ sleep 2
 ## Profile Management
 
 ### Profile Locations
-- **macOS**: `$HOME/Library/Application Support/Google/Chrome-Automation`
+- **macOS**: `/Users/akm/Library/Application Support/Google/Chrome-Automation`
 - **Windows**: `%USERPROFILE%\AppData\Local\Google\Chrome-Automation`
 
 ### Reset Automation Profile
@@ -230,13 +230,13 @@ To reset the profile and re-import from your main Chrome:
 
 **macOS:**
 ```bash
-rm -rf $HOME/Library/Application Support/Google/Chrome-Automation
+rm -rf /Users/akm/Library/Application Support/Google/Chrome-Automation
 bash scripts/start-chrome-mac.sh
 ```
 
 **Windows (PowerShell):**
 ```powershell
-Remove-Item -Recurse -Force "$HOME\AppData\Local\Google\Chrome-Automation"
+Remove-Item -Recurse -Force "/Users/akm\AppData\Local\Google\Chrome-Automation"
 powershell -ExecutionPolicy Bypass -File scripts/start-chrome-windows.ps1
 ```
 

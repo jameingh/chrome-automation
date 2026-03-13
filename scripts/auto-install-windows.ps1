@@ -4,7 +4,7 @@
 Write-Host "🔍 Checking agent-browser installation..." -ForegroundColor Cyan
 
 # Define paths
-$AB_HOME = "$HOME\Documents\agent-browser"
+$AB_HOME = "/Users/akm\Documents\agent-browser"
 $AB_BIN = "$AB_HOME\bin\agent-browser.cmd"
 
 # Check if agent-browser binary exists
@@ -28,7 +28,7 @@ if (Test-Path $AB_BIN) {
 # Check if repository exists
 if (-not (Test-Path $AB_HOME)) {
     Write-Host "📦 Cloning agent-browser repository..." -ForegroundColor Cyan
-    Set-Location "$HOME\Documents"
+    Set-Location "/Users/akm\Documents"
     git clone https://github.com/vercel-labs/agent-browser.git
     Set-Location agent-browser
 } else {
@@ -56,11 +56,11 @@ Write-Host "📦 Installing dependencies..." -ForegroundColor Cyan
 pnpm install
 
 # Check Rust/Cargo
-$cargoPath = "$HOME\.cargo\bin\cargo.exe"
+$cargoPath = "/Users/akm\.cargo\bin\cargo.exe"
 if (-not (Get-Command cargo -ErrorAction SilentlyContinue)) {
     if (Test-Path $cargoPath) {
         Write-Host "✓ Cargo found in ~/.cargo/bin, adding to PATH" -ForegroundColor Green
-        $env:PATH = "$HOME\.cargo\bin;$env:PATH"
+        $env:PATH = "/Users/akm\.cargo\bin;$env:PATH"
     } else {
         Write-Host "❌ Rust/Cargo not found. Installing rustup..." -ForegroundColor Yellow
         Write-Host "Downloading rustup installer..." -ForegroundColor Cyan
@@ -73,12 +73,12 @@ if (-not (Get-Command cargo -ErrorAction SilentlyContinue)) {
         & $rustupInit -y --default-toolchain stable --profile minimal
         
         Remove-Item $rustupInit
-        $env:PATH = "$HOME\.cargo\bin;$env:PATH"
+        $env:PATH = "/Users/akm\.cargo\bin;$env:PATH"
     }
 }
 
 # Ensure cargo is in PATH
-$env:PATH = "$HOME\.cargo\bin;$env:PATH"
+$env:PATH = "/Users/akm\.cargo\bin;$env:PATH"
 
 # Check if default toolchain is set
 try {

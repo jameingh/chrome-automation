@@ -5,8 +5,8 @@
 set -e
 
 # Define paths
-CHROME_AUTOMATION_DIR="$HOME/Library/Application Support/Google/Chrome-Automation"
-CHROME_DEFAULT_DIR="$HOME/Library/Application Support/Google/Chrome"
+CHROME_AUTOMATION_DIR="/Users/akm/Library/Application Support/Google/Chrome-Automation"
+CHROME_DEFAULT_DIR="/Users/akm/Library/Application Support/Google/Chrome"
 CHROME_APP="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DEBUG_PORT=9222
 
